@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aacharya Ashok Ji - Best Astrologer in India</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts for a modern, clean look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Custom scrollbar styling for better aesthetics */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #e5e5e5;
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: #d1d1d1;
+        }
+
+        /* Set default font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 custom-scrollbar">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#home" class="text-2xl font-bold text-gray-900">Aacharya Ashok Kumar Sharma Ji</a>
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="#home" class="text-gray-600 hover:text-orange-500 transition-colors duration-300">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-orange-500 transition-colors duration-300">Services</a>
+                <a href="#about" class="text-gray-600 hover:text-orange-500 transition-colors duration-300">About</a>
+                <a href="#clients-reviews" class="text-gray-600 hover:text-orange-500 transition-colors duration-300">Clients & Reviews</a>
+                <a href="#blog" class="text-gray-600 hover:text-orange-500 transition-colors duration-300">Blog</a>
+                <a href="#media" class="text-gray-600 hover:text-orange-500 transition-colors duration-300">Media</a>
+                <a href="#book-appointment" class="bg-orange-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300">Book an Appointment</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-gray-600 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white shadow-lg py-4">
+            <a href="#home" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-300">Home</a>
+            <a href="#services" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-300">Services</a>
+            <a href="#about" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-300">About</a>
+            <a href="#clients-reviews" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-300">Clients & Reviews</a>
+            <a href="#blog" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-300">Blog</a>
+            <a href="#media" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-300">Media</a>
+            <a href="#book-appointment" class="block px-6 py-2 text-gray-600 hover:bg-gray-100 transition-colors duration-300">Book an Appointment</a>
+        </div>
+    </header>
+
+    <main class="min-h-screen">
+
+        <!-- All-in-one view container -->
+        <div id="views-container">
+
+            <!-- Home View -->
+            <section id="home" class="view hidden">
+                <!-- Hero Section -->
+                <div class="relative bg-gradient-to-r from-orange-400 to-red-500 text-white py-20 md:py-32">
+                    <div class="container mx-auto px-6 text-center">
+                        <h1 class="text-4xl md:text-6xl font-bold leading-tight">Your Path to a Brighter Future</h1>
+                        <p class="mt-4 md:text-xl max-w-2xl mx-auto">
+                            Aacharya Ashok Kumar Sharma Ji is a world-renowned astrologer dedicated to guiding you through life's challenges with ancient wisdom and modern insight.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Services Preview & Chart -->
+                <div id="services-preview" class="py-16 bg-gray-50">
+                    <div class="container mx-auto px-6 text-center">
+                        <h2 class="text-3xl font-bold text-gray-800">Our Services & Expertise</h2>
+                        <div class="grid md:grid-cols-2 gap-8 mt-10 items-center">
+                            <div class="bg-white rounded-lg shadow-lg p-8 transform transition duration-500 hover:scale-105">
+                                <h3 class="text-xl font-semibold mb-4">Areas of Expertise</h3>
+                                <div class="w-full">
+                                    <canvas id="servicesChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="bg-white rounded-lg shadow-lg p-8 transform transition duration-500 hover:scale-105">
+                                    <i class="fas fa-hand-holding-heart text-4xl text-orange-500 mb-4"></i>
+                                    <h3 class="text-xl font-semibold mb-2">Love & Relationships</h3>
+                                    <p class="text-gray-600">Guidance on finding your soulmate, resolving conflicts, and building stronger bonds.</p>
+                                </div>
+                                <div class="bg-white rounded-lg shadow-lg p-8 transform transition duration-500 hover:scale-105">
+                                    <i class="fas fa-briefcase text-4xl text-orange-500 mb-4"></i>
+                                    <h3 class="text-xl font-semibold mb-2">Career & Business</h3>
+                                    <p class="text-gray-600">Astrological insights to help you make informed decisions for your professional growth.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#services" class="mt-8 inline-block bg-orange-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition-colors duration-300">View All Services</a>
+                    </div>
+                </div>
+
+                <!-- About Section Preview with Dynamic Counter -->
+                <div id="about-preview" class="py-16 bg-white">
+                    <div class="container mx-auto px-6 text-center">
+                        <h2 class="text-3xl font-bold text-gray-800">About Aacharya Ashok Kumar Sharma Ji</h2>
+                        <p class="mt-4 text-gray-600 max-w-3xl mx-auto">
+                            With over 25+ years of experience, Aacharya Ashok Kumar Sharma Ji has become a trusted name in astrology. His compassionate approach and accurate predictions have helped thousands find clarity and purpose.
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10">
+                            <div class="flex flex-col items-center">
+                                <p id="years-of-experience" class="text-5xl font-bold text-orange-500">0+</p>
+                                <span class="text-gray-600 mt-2">Years of Experience</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <p id="clients-served" class="text-5xl font-bold text-orange-500">0+</p>
+                                <span class="text-gray-600 mt-2">Clients Served</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <p id="positive-reviews" class="text-5xl font-bold text-orange-500">0+</p>
+                                <span class="text-gray-600 mt-2">Positive Reviews</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <p id="solved-cases" class="text-5xl font-bold text-orange-500">0+</p>
+                                <span class="text-gray-600 mt-2">Solved Cases</span>
+                            </div>
+                        </div>
+                        <a href="#about" class="mt-8 inline-block text-orange-500 hover:text-orange-600 font-semibold transition-colors duration-300">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Clients & Reviews Preview -->
+                <div id="reviews-preview" class="py-16 bg-gray-50">
+                    <div class="container mx-auto px-6 text-center">
+                        <h2 class="text-3xl font-bold text-gray-800">What Our Clients Say</h2>
+                        <div class="grid md:grid-cols-2 gap-8 mt-10">
+                            <!-- Reviews will be dynamically injected here -->
+                        </div>
+                        <a href="#clients-reviews" class="mt-8 inline-block text-orange-500 hover:text-orange-600 font-semibold transition-colors duration-300">View All Reviews</a>
+                    </div>
+                </div>
+
+                <!-- Blog Preview -->
+                <div id="blog-preview" class="py-16 bg-white">
+                    <div class="container mx-auto px-6 text-center">
+                        <h2 class="text-3xl font-bold text-gray-800">Latest from the Blog</h2>
+                        <div class="grid md:grid-cols-3 gap-8 mt-10">
+                            <div class="bg-gray-50 rounded-lg shadow-lg transition duration-500 hover:scale-105 overflow-hidden">
+                                <img src="astrology_blog_1.webp" alt="Blog post image" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2">Understanding Your Birth Chart</h3>
+                                    <p class="text-gray-600 mb-4 text-sm">A simple guide to the basics of your kundli and how it influences your life's journey.</p>
+                                    <a href="#blog_details_1" class="text-orange-500 font-semibold hover:text-orange-600 transition-colors duration-300 read-more-btn">Read More <i class="fas fa-arrow-right ml-2"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg shadow-lg transition duration-500 hover:scale-105 overflow-hidden">
+                                <img src="astrology_blog_2.webp" alt="Blog post image" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2">Vastu Tips for a Prosperous Home</h3>
+                                    <p class="text-gray-600 mb-4 text-sm">Five easy vastu tips you can implement today to bring positive energy and wealth.</p>
+                                    <a href="#blog_details_2" class="text-orange-500 font-semibold hover:text-orange-600 transition-colors duration-300 read-more-btn">Read More <i class="fas fa-arrow-right ml-2"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg shadow-lg transition duration-500 hover:scale-105 overflow-hidden">
+                                <img src="astrology_blog_3.jpg" alt="Blog post image" class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2">The Power of Gemstones</h3>
+                                    <p class="text-gray-600 mb-4 text-sm">Discover how wearing the right gemstone can amplify your planetary strengths and bring good fortune.</p>
+                                    <a href="#blog_details_3" class="text-orange-500 font-semibold hover:text-orange-600 transition-colors duration-300 read-more-btn">Read More <i class="fas fa-arrow-right ml-2"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#blog" class="mt-8 inline-block text-orange-500 hover:text-orange-600 font-semibold transition-colors duration-300">Read All Blogs</a>
+                    </div>
+                </div>
+
+                <!-- Media Preview -->
+                <div id="media-preview" class="py-16 bg-gray-50">
+                    <div class="container mx-auto px-6 text-center">
+                        <h2 class="text-3xl font-bold text-gray-800">Famous Clients Blessings by Aacharya Ji</h2>
+                        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10">
+                             <!-- Client Photo 1 -->
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                                <img src="client1.jpg" alt="Client 1 Blessing" class="w-full aspect-square object-cover">
+                                <div class="p-4 text-center">
+                                    <p class="text-gray-700 font-semibold">Upendra Kushwaha</p>
+                                    <p class="text-sm text-gray-500 mt-1">""Acharya ji Blessing Upendra Kushwaha(Ex. Minister India)""</p>
+                                </div>
+                            </div>
+                            <!-- Client 2 -->
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                                <img src="client2.jpg" alt="Client 2 Blessing" class="w-full aspect-square object-cover">
+                                <div class="p-4 text-center">
+                                    <p class="text-gray-700 font-semibold">Khesari Lal Yadav</p>
+                                    <p class="text-sm text-gray-500 mt-1">"Acharya ji Blessing Khesari Lal Yadav(Bhojpuri Filmstar,Singer)"</p>
+                                </div>
+                            </div>
+                            <!-- Client 3 -->
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                                <img src="client3.jpg" alt="Client 3 Blessing" class="w-full aspect-square object-cover">
+                                <div class="p-4 text-center">
+                                    <p class="text-gray-700 font-semibold">Manoj Tiwari</p>
+                                    <p class="text-sm text-gray-500 mt-1">"Acharya ji Blessing Manoj Tiwari(Bhojpuri Filmstar,Politician,Singer)"</p>
+                                </div>
+                            </div>
+                            <!-- Client 4 -->
+                            <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                                <img src="client4.jpg" alt="Client 4 Blessing" class="w-full aspect-square object-cover">
+                                <div class="p-4 text-center">
+                                    <p class="text-gray-700 font-semibold">Tejashwi Yadav</p>
+                                    <p class="text-sm text-gray-500 mt-1">"Acharya ji Blessings Tejashwi Yadav(Ex. Dy. CM Bihar)"</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#media" class="mt-8 inline-block bg-orange-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition-colors duration-300">See All Media</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services View -->
+            <section id="services" class="view hidden py-16">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Our Astrological Services</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Service Card -->
+                        <div class="bg-white rounded-lg shadow-lg p-8 text-center transition duration-300 hover:shadow-xl">
+                            <i class="fas fa-hand-holding-heart text-5xl text-orange-500 mb-4"></i>
+                            <h3 class="text-2xl font-semibold mb-2">Love & Relationships</h3>
+                            <p class="text-gray-600">Navigate the complexities of love with personalized astrological readings. Find your partner, resolve conflicts, and build lasting happiness. Our unique relationship synastry system analyzes the compatibility between two birth charts to provide a deeper understanding of your connection.</p>
+                        </div>
+                        <!-- Service Card -->
+                        <div class="bg-white rounded-lg shadow-lg p-8 text-center transition duration-300 hover:shadow-xl">
+                            <i class="fas fa-briefcase text-5xl text-orange-500 mb-4"></i>
+                            <h3 class="text-2xl font-semibold mb-2">Career & Business</h3>
+                            <p class="text-gray-600">Unlock your professional potential. Get insights on career choices, business ventures, and financial growth based on your birth chart. Our career analysis system provides a detailed report on favorable periods and potential challenges in your professional life.</p>
+                        </div>
+                        <!-- Service Card -->
+                        <div class="bg-white rounded-lg shadow-lg p-8 text-center transition duration-300 hover:shadow-xl">
+                            <i class="fas fa-graduation-cap text-5xl text-orange-500 mb-4"></i>
+                            <h3 class="text-2xl font-semibold mb-2">Education & Studies</h3>
+                            <p class="text-gray-600">Find the right academic path and overcome educational hurdles with astrological guidance. We use a planetary influence system to identify subjects and fields where a student's natural abilities will shine.</p>
+                        </div>
+                        <!-- Service Card with Vastu System -->
+                        <div class="bg-white rounded-lg shadow-lg p-8 text-center transition duration-300 hover:shadow-xl">
+                            <i class="fas fa-home text-5xl text-orange-500 mb-4"></i>
+                            <h3 class="text-2xl font-semibold mb-2">Vastu Shastra</h3>
+                            <p class="text-gray-600">Create a harmonious environment in your home or office. Vastu corrections for prosperity, health, and peace. Below is a simple diagram illustrating Vastu principles for a home.</p>
+                            <div class="mt-6 flex justify-center">
+                                <div class="w-64 h-64 bg-gray-100 border-2 border-gray-300 rounded-lg relative flex flex-col justify-between p-4">
+                                    <div class="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-1 p-2">
+                                        <div class="bg-red-200 border border-red-300 rounded-sm text-xs flex items-center justify-center p-1">North-East<br>(Prayer)</div>
+                                        <div class="bg-gray-200 border border-gray-300 rounded-sm text-xs flex items-center justify-center p-1">North<br>(Wealth)</div>
+                                        <div class="bg-blue-200 border border-blue-300 rounded-sm text-xs flex items-center justify-center p-1">North-West<br>(Support)</div>
+                                        <div class="bg-gray-200 border border-gray-300 rounded-sm text-xs flex items-center justify-center p-1">East<br>(Health)</div>
+                                        <div class="bg-yellow-200 border border-yellow-300 rounded-sm text-xs flex items-center justify-center p-1">Center<br>(Brahmasthan)</div>
+                                        <div class="bg-green-200 border border-green-300 rounded-sm text-xs flex items-center justify-center p-1">West<br>(Benefits)</div>
+                                        <div class="bg-yellow-200 border border-yellow-300 rounded-sm text-xs flex items-center justify-center p-1">South-East<br>(Kitchen)</div>
+                                        <div class="bg-gray-200 border border-gray-300 rounded-sm text-xs flex items-center justify-center p-1">South<br>(Fame)</div>
+                                        <div class="bg-red-200 border border-red-300 rounded-sm text-xs flex items-center justify-center p-1">South-West<br>(Master)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service Card -->
+                        <div class="bg-white rounded-lg shadow-lg p-8 text-center transition duration-300 hover:shadow-xl">
+                            <i class="fas fa-child text-5xl text-orange-500 mb-4"></i>
+                            <h3 class="text-2xl font-semibold mb-2">Child Astrology</h3>
+                            <p class="text-gray-600">Understand your child's personality, potential, and challenges through their birth chart. Our child development system provides a comprehensive report on their strengths and weaknesses, guiding you to nurture their growth effectively.</p>
+                        </div>
+                        <!-- Service Card -->
+                        <div class="bg-white rounded-lg shadow-lg p-8 text-center transition duration-300 hover:shadow-xl">
+                            <i class="fas fa-heartbeat text-5xl text-orange-500 mb-4"></i>
+                            <h3 class="text-2xl font-semibold mb-2">Health & Wellness</h3>
+                            <p class="text-gray-600">Receive astrological insights into your health and find remedies to boost your well-being. Our health prediction system maps planetary positions to potential health concerns, allowing for proactive care and remedies.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About View -->
+            <section id="about" class="view hidden py-16 bg-white">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Aacharya Ashok Kumar Sharma Ji</h2>
+                    <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                        <div class="md:w-1/3">
+                            <img src="astrologer_profile.jpg" alt="Aacharya Ashok Ji" class="rounded-full shadow-lg w-48 h-48 md:w-full md:h-auto mx-auto md:mx-0">
+                        </div>
+                        <div class="md:w-2/3 mt-8 md:mt-0 text-center md:text-left">
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                Aacharya Ashok Ji, a name synonymous with authentic and effective astrology, has been practicing for over two decades. Born into a family of respected astrologers, he inherited a deep understanding of Vedic scriptures and celestial sciences. His journey began under the tutelage of his grandfather, where he mastered the nuances of predictive astrology, Vastu Shastra, and numerology.
+                            </p>
+                            <p class="mt-4 text-gray-600 text-lg leading-relaxed">
+                                He is not just an astrologer; he is a compassionate guide and mentor. His unique approach combines traditional astrological principles with a modern, psychological perspective, providing practical solutions that are easy to implement. Aacharya Ashok Ji believes in empowering his clients to take control of their lives, not just predict their future.
+                            </p>
+                            <p class="mt-4 text-gray-600 text-lg leading-relaxed">
+                                Over the years, he has consulted with thousands of individuals, celebrities, and business leaders, helping them navigate crucial life decisions with confidence. His dedication to his clients and his profound knowledge make him one of the most sought-after astrologers in India.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Clients & Reviews View -->
+            <section id="clients-reviews" class="view hidden py-16 bg-gray-50">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Clients & Reviews</h2>
+                    <!-- Submit Reviews Option -->
+                    <div class="flex justify-center mb-10">
+                        <button id="submit-review-btn" class="bg-orange-500 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-orange-600 transition-colors duration-300 transform hover:scale-105">
+                            Submit a Review
+                        </button>
+                    </div>
+
+                    <!-- Reviews Summary Chart -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 mb-12 max-w-4xl mx-auto">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Client Satisfaction Overview</h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <canvas id="reviewsChart"></canvas>
+                            </div>
+                            <div class="flex flex-col justify-center space-y-2">
+                                <!-- Dynamic progress bars for star ratings -->
+                                <div class="flex items-center">
+                                    <span class="text-lg font-semibold w-12 text-center">5 <i class="fas fa-star text-yellow-400"></i></span>
+                                    <div class="w-full bg-gray-200 rounded-full h-4 mx-4">
+                                        <div id="star-5-bar" class="bg-orange-500 h-4 rounded-full" style="width: 90%;"></div>
+                                    </div>
+                                    <span id="star-5-count" class="w-12 text-right">90%</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-lg font-semibold w-12 text-center">4 <i class="fas fa-star text-yellow-400"></i></span>
+                                    <div class="w-full bg-gray-200 rounded-full h-4 mx-4">
+                                        <div id="star-4-bar" class="bg-orange-500 h-4 rounded-full" style="width: 8%;"></div>
+                                    </div>
+                                    <span id="star-4-count" class="w-12 text-right">8%</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-lg font-semibold w-12 text-center">3 <i class="fas fa-star text-yellow-400"></i></span>
+                                    <div class="w-full bg-gray-200 rounded-full h-4 mx-4">
+                                        <div id="star-3-bar" class="bg-orange-500 h-4 rounded-full" style="width: 1%;"></div>
+                                    </div>
+                                    <span id="star-3-count" class="w-12 text-right">1%</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-lg font-semibold w-12 text-center">2 <i class="fas fa-star text-yellow-400"></i></span>
+                                    <div class="w-full bg-gray-200 rounded-full h-4 mx-4">
+                                        <div id="star-2-bar" class="bg-orange-500 h-4 rounded-full" style="width: 0.5%;"></div>
+                                    </div>
+                                    <span id="star-2-count" class="w-12 text-right">0.5%</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="text-lg font-semibold w-12 text-center">1 <i class="fas fa-star text-yellow-400"></i></span>
+                                    <div class="w-full bg-gray-200 rounded-full h-4 mx-4">
+                                        <div id="star-1-bar" class="bg-orange-500 h-4 rounded-full" style="width: 0.5%;"></div>
+                                    </div>
+                                    <span id="star-1-count" class="w-12 text-right">0.5%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Individual Review Cards -->
+                    <div id="reviews-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Reviews will be dynamically injected here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog View -->
+            <section id="blog" class="view hidden py-16 bg-white">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Astrology Blog</h2>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-list">
+                        <!-- Blog Post 1 -->
+                        <div class="bg-gray-50 rounded-lg shadow-lg transition duration-500 hover:scale-105 overflow-hidden">
+                            <img src="astrology_blog_1.webp"Blog post image" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Understanding Your Birth Chart</h3>
+                                <p class="text-gray-600 mb-4 text-sm">A simple guide to the basics of your kundli and how it influences your life's journey.</p>
+                                <a href="#blog_details_1" class="text-orange-500 font-semibold hover:text-orange-600 transition-colors duration-300 read-more-btn">Read More <i class="fas fa-arrow-right ml-2"></i></a>
+                            </div>
+                        </div>
+                        <!-- Blog Post 2 -->
+                        <div class="bg-gray-50 rounded-lg shadow-lg transition duration-500 hover:scale-105 overflow-hidden">
+                            <img src="astrology_blog_2.webp" alt="Blog post image" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">Vastu Tips for a Prosperous Home</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Five easy vastu tips you can implement today to bring positive energy and wealth.</p>
+                                <a href="#blog_details_2" class="text-orange-500 font-semibold hover:text-orange-600 transition-colors duration-300 read-more-btn">Read More <i class="fas fa-arrow-right ml-2"></i></a>
+                            </div>
+                        </div>
+                        <!-- Blog Post 3 -->
+                        <div class="bg-gray-50 rounded-lg shadow-lg transition duration-500 hover:scale-105 overflow-hidden">
+                            <img src="astrology_blog_3.jpg" alt="Blog post image" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold mb-2">The Power of Gemstones</h3>
+                                <p class="text-gray-600 mb-4 text-sm">Discover how wearing the right gemstone can amplify your planetary strengths and bring good fortune.</p>
+                                <a href="#blog_details_3" class="text-orange-500 font-semibold hover:text-orange-600 transition-colors duration-300 read-more-btn">Read More <i class="fas fa-arrow-right ml-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog Details View -->
+            <section id="blog-details" class="view hidden py-16 bg-white">
+                <div class="container mx-auto px-6 max-w-4xl">
+                    <button id="back-to-blog-list-btn" class="text-orange-500 hover:text-orange-600 font-semibold transition-colors duration-300 mb-8 flex items-center">
+                        <i class="fas fa-arrow-left mr-2"></i> Back to All Blogs
+                    </button>
+                    <h2 id="blog-title" class="text-4xl font-bold text-gray-800 mb-4"></h2>
+                    <p id="blog-author" class="text-gray-500 text-sm mb-6"></p>
+                    <img id="blog-image" src="" alt="Blog Post Image" class="w-full h-96 object-cover rounded-lg shadow-lg mb-8">
+                    <div id="blog-content" class="prose max-w-none text-gray-700">
+                        <!-- Blog content will be injected here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Media View -->
+            <section id="media" class="view hidden py-16 bg-gray-50">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Famous Clients Blessings by Aacharya Ji</h2>
+                    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                        <!-- Client 1 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="client1.jpg"Client 1 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Upendra Kushwaha</p>
+                                <p class="text-sm text-gray-500 mt-1"> "Aacharya ji Blessing Upendra Kushwaha(Ex. Minister India)"</p>
+                            </div>
+                        </div>
+                        <!-- Client 2 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="client2.jpg"Client 2 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Khesari Lal Yadav</p>
+                                <p class="text-sm text-gray-500 mt-1">"Aacharya ji Blessing khesari Lal Yadav(Bhojpuri Filmstar,Singer)"</p>
+                            </div>
+                        </div>
+                        <!-- Client 3 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="client3.jpg" alt="Client 3 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Manoj Tiwari</p>
+                                <p class="text-sm text-gray-500 mt-1">"Aacharya ji Blessing Manoj Tiwari(Bhojpuri Filmstar,Politician,Singer)"</p>
+                            </div>
+                        </div>
+                        <!-- Client 4 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="client4.jpg" alt=Client 4 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Tejashwi Yadav</p>
+                                <p class="text-sm text-gray-500 mt-1">"Aacharya ji Blessings Tejashwi Yadav(Ex. Dy. CM Bihar)"</p>
+                            </div>
+                        </div>
+                        <!-- Client 5 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="client5.jpg" alt="Client 5 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Late Sheila Dikshit</p>
+                                <p class="text-sm text-gray-500 mt-1">"Aacharya ji Blessings Sheila Dikshit(Formal CM Delhi)"</p>
+                            </div>
+                        </div>
+                        <!-- Client 6 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="client6.jpg" alt="Client 6 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Shatrughan Sinha</p>
+                                <p class="text-sm text-gray-500 mt-1">"Aacharya ji Blessings Shatrughan Sinha(Politician,Bollywood Filmstar)"</p>
+                            </div>
+                        </div>
+                        <!-- Client 7 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="client7.jpg" alt="Client 7 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Awadh Bihari Choudhary</p>
+                                <p class="text-sm text-gray-500 mt-1">"Aacharya ji Blessings Awadh Bihari Choudhary(Ex. Minister And Ex. Speaker Bihar)"</p>
+                            </div>
+                        </div>
+                        <!-- Client 8 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="client8.jpg" alt="Client 8 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Shrawan Kumar</p>
+                                <p class="text-sm text-gray-500 mt-1">"Aacharya ji Blessings Shrawan Kumar(Minister of Rural Development and Parliamentary Affairs,bihar)"</p>
+                            </div>
+                        </div>
+                        <!-- Client 9 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="client9.jpg" alt="Client 9 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">IPS Saurav Kumar Shah</p>
+                                <p class="text-sm text-gray-500 mt-1">"Aacharya ji Blessings IPS Saurav Kumar Shah(Executive Director(IPDS) & PFC,former Deputy Secretary, Department of Youth Affairs, Government of India)"</p>
+                            </div>
+                        </div>
+                        <!-- Client 10 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="https://placehold.co/400x400/FCE7F3/831843?text=Client+10" alt="Client 10 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Client Name</p>
+                                <p class="text-sm text-gray-500 mt-1">"His reading on my child's education was a game-changer. We're on the right track now."</p>
+                            </div>
+                        </div>
+                        <!-- Client 11 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="https://placehold.co/400x400/DBEAFE/1E40AF?text=Client+11" alt="Client 11 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Client Name</p>
+                                <p class="text-sm text-gray-500 mt-1">"He provided clear and actionable advice on my financial struggles. Things are looking up."</p>
+                            </div>
+                        </div>
+                        <!-- Client 12 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="https://placehold.co/400x400/D4FDE7/289A5E?text=Client+12" alt="Client 12 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Client Name</p>
+                                <p class="text-sm text-gray-500 mt-1">"I felt an instant connection and trust. His positive energy is contagious."</p>
+                            </div>
+                        </div>
+                        <!-- Client 13 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="https://placehold.co/400x400/F5C6A0/7B3D06?text=Client+13" alt="Client 13 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Client Name</p>
+                                <p class="text-sm text-gray-500 mt-1">"The Vastu remedies he suggested were simple and have made a huge difference."</p>
+                            </div>
+                        </div>
+                        <!-- Client 14 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="https://placehold.co/400x400/E9D5FF/6B21A8?text=Client+14" alt="Client 14 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Client Name</p>
+                                <p class="text-sm text-gray-500 mt-1">"I appreciate his modern and practical approach to ancient astrology."</p>
+                            </div>
+                        </div>
+                        <!-- Client 15 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="https://placehold.co/400x400/D1D1D1/333333?text=Client+15" alt="Client 15 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Client Name</p>
+                                <p class="text-sm text-gray-500 mt-1">"His guidance on my love life was insightful and brought me much-needed clarity."</p>
+                            </div>
+                        </div>
+                        <!-- Client 16 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="https://placehold.co/400x400/C4B5FD/4C1D95?text=Client+16" alt="Client 16 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Client Name</p>
+                                <p class="text-sm text-gray-500 mt-1">"He is the most genuine and knowledgeable astrologer I have ever met."</p>
+                            </div>
+                        </div>
+                        <!-- Client 17 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="https://placehold.co/400x400/A7F3D0/0D9488?text=Client+17" alt="Client 17 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Client Name</p>
+                                <p class="text-sm text-gray-500 mt-1">"My health has improved significantly after following his astrological remedies."</p>
+                            </div>
+                        </div>
+                        <!-- Client 18 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="https://placehold.co/400x400/FAD7A0/8C570A?text=Client+18" alt="Client 18 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Client Name</p>
+                                <p class="text-sm text-gray-500 mt-1">"I finally found the right direction for my business, thanks to his guidance."</p>
+                            </div>
+                        </div>
+                        <!-- Client 19 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="https://placehold.co/400x400/98C1D9/2D3E50?text=Client+19" alt="Client 19 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Client Name</p>
+                                <p class="text-sm text-gray-500 mt-1">"He helped me resolve a long-standing family dispute with his wise counsel."</p>
+                            </div>
+                        </div>
+                        <!-- Client 20 -->
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition duration-500 hover:scale-105">
+                            <img src="https://placehold.co/400x400/A0D2DB/2E8691?text=Client+20" alt="Client 20 Blessing" class="w-full aspect-square object-cover">
+                            <div class="p-4 text-center">
+                                <p class="text-gray-700 font-semibold">Client Name</p>
+                                <p class="text-sm text-gray-500 mt-1">"His predictions are not just accurate, they are empowering."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Book Appointment View -->
+            <section id="book-appointment" class="view hidden py-16 bg-white">
+                <div class="container mx-auto px-6">
+                    <h2 class="text-4xl font-bold text-center text-gray-800 mb-6">Book Your Appointment</h2>
+                    <p class="text-lg text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                        Fill out the form below to schedule a personal consultation with Aacharya Ashok Ji. We will get back to you within 24 hours to confirm your appointment and payment.
+                    </p>
+                    <div class="bg-gray-100 rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
+                        <form id="appointment-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                                <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                                <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500" required>
+                            </div>
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-gray-700">Service of Interest</label>
+                                <select id="service" name="service" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-md">
+                                    <option value="Love & Relationships" data-price="2500">Love & Relationships - ₹2500</option>
+                                    <option value="Career & Business" data-price="3000">Career & Business - ₹3000</option>
+                                    <option value="Education & Studies" data-price="2000">Education & Studies - ₹2000</option>
+                                    <option value="Vastu Shastra" data-price="5000">Vastu Shastra - ₹5000</option>
+                                    <option value="Palmistry Analysis" data-price="3500">Palmistry Analysis - ₹3500</option>
+                                    <option value="Numerology" data-price="2800">Numerology - ₹2800</option>
+                                    <option value="Health & Wellness" data-price="2200">Health & Wellness - ₹2200</option>
+                                    <option value="Other" data-price="2500">Other - ₹2500</option>
+                                </select>
+                            </div>
+                            <!-- Dynamic Price Display -->
+                            <div class="bg-gray-200 rounded-md p-4 flex items-center justify-between">
+                                <span class="font-semibold text-lg text-gray-800">Total Price:</span>
+                                <span id="service-price" class="font-bold text-xl text-orange-500">₹2500</span>
+                            </div>
+                            <div>
+                                <label for="appointment-date" class="block text-sm font-medium text-gray-700">Select Date</label>
+                                <input type="date" id="appointment-date" name="appointment-date" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500" required>
+                            </div>
+                            <div>
+                                <label for="appointment-time" class="block text-sm font-medium text-gray-700">Select Time Slot</label>
+                                <select id="appointment-time" name="appointment-time" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-orange-500 focus:border-orange-500 sm:text-sm rounded-md" required>
+                                    <!-- Options will be dynamically added via JavaScript -->
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
+                                <textarea id="message" name="message" rows="4" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500" required></textarea>
+                            </div>
+                            <div class="flex flex-col space-y-4">
+                                <button type="submit" id="book-now-btn" class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300 transform hover:scale-105">
+                                    Book Now
+                                </button>
+                                <button type="reset" class="bg-gray-200 text-gray-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-300 transition-colors duration-300 transform hover:scale-105">
+                                    Reset
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+    
+    <!-- Modals -->
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-gray-600 bg-opacity-75 overflow-y-auto h-full w-full hidden z-50">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+            <div class="mt-3 text-center">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+                    <i class="fas fa-check text-green-600 text-2xl"></i>
+                </div>
+                <h3 id="modal-title" class="text-lg leading-6 font-medium text-gray-900 mt-2"></h3>
+                <div class="mt-2 px-7 py-3">
+                    <p id="modal-text" class="text-sm text-gray-500"></p>
+                </div>
+                <div class="items-center px-4 py-3">
+                    <button id="close-modal-btn" class="px-4 py-2 bg-orange-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-300">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Review Modal -->
+    <div id="review-modal" class="fixed inset-0 bg-gray-600 bg-opacity-75 overflow-y-auto h-full w-full hidden z-50">
+        <div class="relative top-20 mx-auto p-5 border w-full max-w-md shadow-lg rounded-md bg-white">
+            <h3 class="text-2xl font-bold text-center text-gray-800 mb-6">Submit Your Review</h3>
+            <form id="review-form" class="space-y-6">
+                <div>
+                    <label for="review-name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                    <input type="text" id="review-name" name="review-name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500" required>
+                </div>
+                <div>
+                    <label for="review-text" class="block text-sm font-medium text-gray-700">Your Review</label>
+                    <textarea id="review-text" name="review-text" rows="4" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-orange-500 focus:border-orange-500" required></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Rating</label>
+                    <div id="star-rating" class="flex justify-center space-x-1 text-2xl text-gray-300">
+                        <i class="far fa-star cursor-pointer hover:text-yellow-400 transition-colors duration-200" data-rating="1"></i>
+                        <i class="far fa-star cursor-pointer hover:text-yellow-400 transition-colors duration-200" data-rating="2"></i>
+                        <i class="far fa-star cursor-pointer hover:text-yellow-400 transition-colors duration-200" data-rating="3"></i>
+                        <i class="far fa-star cursor-pointer hover:text-yellow-400 transition-colors duration-200" data-rating="4"></i>
+                        <i class="far fa-star cursor-pointer hover:text-yellow-400 transition-colors duration-200" data-rating="5"></i>
+                    </div>
+                    <input type="hidden" id="review-rating" name="review-rating" required>
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button type="button" id="close-review-modal" class="bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-semibold hover:bg-gray-300 transition-colors duration-300">
+                        Cancel
+                    </button>
+                    <button type="submit" class="bg-orange-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300">
+                        Submit Review
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4">Aacharya Ashok Kumar Sharma Ji</h3>
+                <p class="text-gray-400">Guiding you to a better future with the power of Vedic astrology and ancient wisdom.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">Home</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">Services</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">About</a></li>
+                    <li><a href="#clients-reviews" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">Clients & Reviews</a></li>
+                    <li><a href="#blog" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">Blog</a></li>
+                    <li><a href="#media" class="text-gray-400 hover:text-orange-500 transition-colors duration-300">Media</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li><i class="fas fa-map-marker-alt mr-2 text-orange-500"></i> Patna,Bihar,India</li>
+                    <li><i class="fas fa-phone-alt mr-2 text-orange-500"></i> +91 9162754175</li>
+                    <li><i class="fas fa-envelope mr-2 text-orange-500"></i> suryakantmanibhardwaj@gmail.com</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300"><i class="fab fa-facebook-f text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300"><i class="fab fa-twitter text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300"><i class="fab fa-instagram text-2xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors duration-300"><i class="fab fa-linkedin-in text-2xl"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 text-center text-gray-500 mt-8 pt-8 border-t border-gray-700">
+            &copy; 2025 Aacharya Ashok Ji. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JS for dynamic content and routing -->
+    <script>
+        const views = document.querySelectorAll('.view');
+        const blogDetailsView = document.getElementById('blog-details');
+        const blogTitle = document.getElementById('blog-title');
+        const blogAuthor = document.getElementById('blog-author');
+        const blogImage = document.getElementById('blog-image');
+        const blogContent = document.getElementById('blog-content');
+        const backToBlogListBtn = document.getElementById('back-to-blog-list-btn');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const reviewsContainer = document.getElementById('reviews-container');
+        const submitReviewBtn = document.getElementById('submit-review-btn');
+        const reviewModal = document.getElementById('review-modal');
+        const reviewForm = document.getElementById('review-form');
+        const reviewRatingInput = document.getElementById('review-rating');
+        const starRatingDiv = document.getElementById('star-rating');
+
+        const appointmentForm = document.getElementById('appointment-form');
+        const serviceDropdown = document.getElementById('service');
+        const servicePriceSpan = document.getElementById('service-price');
+        const appointmentTimeDropdown = document.getElementById('appointment-time');
+        const successModal = document.getElementById('success-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalText = document.getElementById('modal-text');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const bookNowBtn = document.getElementById('book-now-btn');
+
+        // Initial set of reviews
+        let reviews = [{
+            name: 'Rahul Sharma',
+            text: "Aacharya Ji's guidance on my career path was spot on. His predictions gave me the confidence to make a big leap, and it paid off. Highly recommended!",
+            rating: 4.5
+        }, {
+            name: 'Priya Singh',
+            text: "I was struggling with family issues, but after consulting with him, I found a new perspective and practical remedies that brought peace back to my home.",
+            rating: 5
+        }, {
+            name: 'Anjali Mehta',
+            text: "Aacharya Ji's compassionate approach and profound knowledge are truly a blessing. He has a gift for simplifying complex life problems.",
+            rating: 5
+        }, {
+            name: 'Vishal Gupta',
+            text: "I'm a skeptic no more. Aacharya Ji's reading for my future was so accurate and helpful. I can't thank him enough.",
+            rating: 4.5
+        }];
+
+        // Services data for dynamic pricing
+        const servicesData = {
+            'Love & Relationships': 2500,
+            'Career & Business': 3000,
+            'Education & Studies': 2000,
+            'Vastu Shastra': 5000,
+            'Palmistry Analysis': 3500,
+            'Numerology': 2800,
+            'Health & Wellness': 2200,
+            'Other': 2500
+        };
+
+        // Data for charts and counters
+        const serviceChartData = {
+            labels: ['Love & Relationships', 'Career & Business', 'Vastu Shastra', 'Other'],
+            data: [35, 30, 20, 15],
+            backgroundColor: ['#F97316', '#FBBF24', '#FCD34D', '#FDE68A'],
+            hoverBackgroundColor: ['#E25808', '#D49B0E', '#E4B528', '#D6C862'],
+        };
+
+        const reviewsChartData = {
+            labels: ['5 Stars', '4 Stars', '3 Stars', '2 Stars', '1 Star'],
+            data: [90, 8, 1, 0.5, 0.5],
+            backgroundColor: ['#FBBF24', '#FCD34D', '#FDE68A', '#FEE2E2', '#FEF3C7'],
+            hoverBackgroundColor: ['#D49B0E', '#E4B528', '#D6C862', '#FCA5A5', '#FCD34D'],
+        };
+        
+        // Function to render review cards
+        function renderReviews() {
+            reviewsContainer.innerHTML = ''; // Clear existing reviews
+            const fragment = document.createDocumentFragment();
+            reviews.forEach(review => {
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between transition duration-300 hover:shadow-xl';
+                
+                // Function to generate star icons
+                function generateStars(rating) {
+                    let stars = '';
+                    const fullStars = Math.floor(rating);
+                    const hasHalfStar = rating % 1 !== 0;
+                    
+                    for (let i = 0; i < fullStars; i++) {
+                        stars += `<i class="fas fa-star text-yellow-400"></i>`;
+                    }
+                    if (hasHalfStar) {
+                        stars += `<i class="fas fa-star-half-alt text-yellow-400"></i>`;
+                    }
+                    const emptyStars = 5 - Math.ceil(rating);
+                    for (let i = 0; i < emptyStars; i++) {
+                        stars += `<i class="far fa-star text-yellow-400"></i>`;
+                    }
+                    return stars;
+                }
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center mb-4">
+                            ${generateStars(review.rating)}
+                        </div>
+                        <p class="text-gray-700 italic">"${review.text}"</p>
+                    </div>
+                    <div class="mt-4 text-right text-gray-500 font-semibold">- ${review.name}</div>
+                `;
+                fragment.appendChild(card);
+            });
+            reviewsContainer.appendChild(fragment);
+        }
+
+        // Function to start a counter animation
+        function animateCounter(elementId, start, end, duration) {
+            const element = document.getElementById(elementId);
+            let startTime = null;
+            
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = timestamp - startTime;
+                const value = Math.min(start + (progress / duration) * (end - start), end);
+                element.textContent = Math.floor(value) + (elementId === 'positive-reviews' || elementId === 'solved-cases' ? '+' : '');
+                
+                if (progress < duration) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    element.textContent = end + (elementId === 'positive-reviews' || elementId === 'solved-cases' ? '+' : '');
+                }
+            }
+            window.requestAnimationFrame(step);
+        }
+
+        // Toggle mobile menu visibility
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Function to handle content routing based on hash
+        function handleHashChange() {
+            // Hide all views initially
+            views.forEach(view => view.classList.add('hidden'));
+            
+            let hash = window.location.hash || '#home';
+
+            // Check if the hash is for a specific blog post
+            if (hash.startsWith('#blog_details_')) {
+                // Show the blog details view
+                blogDetailsView.classList.remove('hidden');
+                // You would fetch blog post content here based on the hash
+                // For now, let's use a mock content injection
+                const postId = hash.split('_').pop();
+                blogTitle.textContent = `Blog Post ${postId} Title`;
+                blogAuthor.textContent = `Published by Aacharya Ji on July 25, 2024`;
+                blogImage.src = `https://placehold.co/1000x600/E5E7EB/4B5563?text=Blog+Post+${postId}`;
+                blogContent.innerHTML = `<p>This is the detailed content for blog post number ${postId}.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>`;
+            } else {
+                // Show the corresponding view based on the hash
+                const homeView = document.getElementById('home');
+                const servicesView = document.getElementById('services');
+                const aboutView = document.getElementById('about');
+                const clientsReviewsView = document.getElementById('clients-reviews');
+                const blogView = document.getElementById('blog');
+                const mediaView = document.getElementById('media');
+                const bookAppointmentView = document.getElementById('book-appointment');
+                
+                switch (hash) {
+                    case '#home':
+                        homeView.classList.remove('hidden');
+                        // Initialize counters and charts when home is visible
+                        animateCounter('years-of-experience', 0, 20, 1000);
+                        animateCounter('clients-served', 0, 5000, 1500);
+                        animateCounter('positive-reviews', 0, 4800, 1500);
+                        animateCounter('solved-cases', 0, 10000, 1800);
+                        renderServicesChart();
+                        break;
+                    case '#services':
+                        servicesView.classList.remove('hidden');
+                        break;
+                    case '#about':
+                        aboutView.classList.remove('hidden');
+                        break;
+                    case '#clients-reviews':
+                        clientsReviewsView.classList.remove('hidden');
+                        renderReviewsChart();
+                        renderReviews();
+                        break;
+                    case '#blog':
+                        blogView.classList.remove('hidden');
+                        break;
+                    case '#media':
+                        mediaView.classList.remove('hidden');
+                        break;
+                    case '#book-appointment':
+                        bookAppointmentView.classList.remove('hidden');
+                        // Set initial price and populate time slots
+                        updateServicePrice();
+                        populateTimeSlots();
+                        break;
+                    default:
+                        // Default to showing the home page
+                        homeView.classList.remove('hidden');
+                        // Initialize counters and charts on default load
+                        animateCounter('years-of-experience', 0, 20, 1000);
+                        animateCounter('clients-served', 0, 5000, 1500);
+                        animateCounter('positive-reviews', 0, 4800, 1500);
+                        animateCounter('solved-cases', 0, 10000, 1800);
+                        renderServicesChart();
+                        break;
+                }
+            }
+
+            // Scroll to the top of the content area
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Back to blog list button
+        backToBlogListBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.hash = '#blog';
+        });
+
+        // Handle form submission
+        appointmentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            bookNowBtn.disabled = true;
+            bookNowBtn.textContent = 'Booking...';
+            
+            // Simulate form submission with a delay
+            setTimeout(() => {
+                // Here you would typically send the form data to a server
+                const formData = new FormData(appointmentForm);
+                const data = Object.fromEntries(formData.entries());
+
+                console.log('Appointment Data:', data);
+                
+                // Show success modal
+                showSuccessModal('Appointment Booked!', 'Thank you for booking an appointment with Aacharya Ashok Ji. We have received your request and will contact you shortly to confirm the details and payment.');
+
+                // Reset form
+                appointmentForm.reset();
+
+                bookNowBtn.disabled = false;
+                bookNowBtn.textContent = 'Book Now';
+            }, 1500); // 1.5 second delay to simulate network request
+        });
+
+        // Open review submission modal
+        submitReviewBtn.addEventListener('click', () => {
+            reviewModal.classList.remove('hidden');
+        });
+
+        // Close review submission modal
+        document.getElementById('close-review-modal').addEventListener('click', () => {
+            reviewModal.classList.add('hidden');
+        });
+
+        // Star rating functionality
+        starRatingDiv.addEventListener('click', (e) => {
+            const target = e.target.closest('i');
+            if (target) {
+                const rating = parseInt(target.dataset.rating, 10);
+                reviewRatingInput.value = rating;
+                starRatingDiv.querySelectorAll('i').forEach(star => {
+                    const starRating = parseInt(star.dataset.rating, 10);
+                    if (starRating <= rating) {
+                        star.classList.remove('far');
+                        star.classList.add('fas', 'text-yellow-400');
+                    } else {
+                        star.classList.remove('fas', 'text-yellow-400');
+                        star.classList.add('far');
+                    }
+                });
+            }
+        });
+
+        // Review form submission
+        reviewForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('review-name').value;
+            const text = document.getElementById('review-text').value;
+            const rating = parseInt(reviewRatingInput.value, 10);
+            
+            if (name && text && rating) {
+                const newReview = { name, text, rating };
+                reviews.unshift(newReview); // Add new review to the beginning of the array
+                renderReviews(); // Re-render the reviews list
+                reviewModal.classList.add('hidden');
+                reviewForm.reset();
+                // Reset star rating UI
+                starRatingDiv.querySelectorAll('i').forEach(star => {
+                    star.classList.remove('fas', 'text-yellow-400');
+                    star.classList.add('far');
+                });
+                
+                // Show success modal for review
+                showSuccessModal('Review Submitted!', 'Thank you for your valuable feedback. Your review has been submitted successfully.');
+            }
+        });
+
+        // Function to show a custom modal with dynamic content
+        function showSuccessModal(title, message) {
+            modalTitle.textContent = title;
+            modalText.textContent = message;
+            successModal.classList.remove('hidden');
+        }
+
+        // Close modal button
+        closeModalBtn.addEventListener('click', () => {
+            successModal.classList.add('hidden');
+        });
+
+        // Function to update the service price based on dropdown selection
+        function updateServicePrice() {
+            const selectedService = serviceDropdown.value;
+            const price = servicesData[selectedService] || 0;
+            servicePriceSpan.textContent = `₹${price}`;
+        }
+        serviceDropdown.addEventListener('change', updateServicePrice);
+
+        // Function to populate the 24-hour time slots
+        function populateTimeSlots() {
+            appointmentTimeDropdown.innerHTML = '';
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < 24; i++) {
+                const hour = i.toString().padStart(2, '0');
+                const time = `${hour}:00`;
+                const option = document.createElement('option');
+                option.value = time;
+                option.textContent = time;
+                fragment.appendChild(option);
+            }
+            appointmentTimeDropdown.appendChild(fragment);
+        }
+
+        // Function to render the services chart on the home page
+        let servicesChartInstance = null;
+        function renderServicesChart() {
+            if (servicesChartInstance) {
+                servicesChartInstance.destroy();
+            }
+            const ctx = document.getElementById('servicesChart').getContext('2d');
+            servicesChartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: serviceChartData.labels,
+                    datasets: [{
+                        data: serviceChartData.data,
+                        backgroundColor: serviceChartData.backgroundColor,
+                        hoverBackgroundColor: serviceChartData.hoverBackgroundColor,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                        },
+                        title: {
+                            display: false,
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Function to render the reviews chart on the clients-reviews page
+        let reviewsChartInstance = null;
+        function renderReviewsChart() {
+            if (reviewsChartInstance) {
+                reviewsChartInstance.destroy();
+            }
+            const ctx = document.getElementById('reviewsChart').getContext('2d');
+            reviewsChartInstance = new Chart(ctx, {
+                type: 'polarArea',
+                data: {
+                    labels: reviewsChartData.labels,
+                    datasets: [{
+                        data: reviewsChartData.data,
+                        backgroundColor: reviewsChartData.backgroundColor,
+                        hoverBackgroundColor: reviewsChartData.hoverBackgroundColor,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        title: {
+                            display: false,
+                        }
+                    },
+                    scales: {
+                        r: {
+                            pointLabels: {
+                                display: true,
+                                centerPointLabels: true,
+                                font: {
+                                    size: 14
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Call the function on initial load and on hash change
+        window.addEventListener('load', () => {
+            handleHashChange();
+            renderReviews(); // Initial render of reviews on page load
+        });
+        window.addEventListener('hashchange', handleHashChange);
+    </script>
+</body>
+</html>
